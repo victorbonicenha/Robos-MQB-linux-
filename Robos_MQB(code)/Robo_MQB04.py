@@ -6,7 +6,7 @@ home = os.path.expanduser("~")
 chrome_path = os.path.join(home, ".cache", "ms-playwright", "chromium-1169", "chrome-linux", "chrome")
 
 def run(playwright: Playwright) -> None:
-    browser = playwright.chromium.launch(headless=False, args=["--start-maximized"], executable_path="/home/tvmqb/.cache/ms-playwright/chromium-1169/chrome-linux/chrome")
+    browser = playwright.chromium.launch(headless=False, args=["--start-maximized"], executable_path=chrome_path)
     context = browser.new_context(no_viewport=True)
     page = context.new_page()
     page.goto("https://datadriven.datawake.com.br:8057/data-driven/login.html")
